@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>about</h1>
+    <p>this is a about</p>
+
+    <p>{{ my_text }}, {{ my_number }}, {{ my_list }}</p>
+
+    <ul>
+        {% for my_sub_item in my_list %}
+            {% if my_sub_item == 'abc' %}
+                <li>{{ forloop.counter }} - this is not a network</li>
+            {% elif my_sub_item == 344 %}
+                <li>{{ forloop.counter }} - {{ my_sub_item|add:23 }}</li>
+            {% else %}
+                <li>{{ forloop.counter }} - {{ my_sub_item }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
